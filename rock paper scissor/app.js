@@ -1,6 +1,7 @@
 let userScore =0;
 let compScore =0;
-
+const userMsg=document.querySelector("#user-score");
+const compMsg =document.querySelector("#comp-score");
 const msg = document.querySelector("#click");
 const choices = document.querySelectorAll(".choice");
 
@@ -13,11 +14,15 @@ const  winner = (userwin) =>{
     if(userwin){
         console.log("you win ...");
         msg.innerText="YOU WIN";
-        
+        userScore++;
+        userMsg.innerText=userScore;
+        console.log("user score =" ,userScore);
     }
     else {
         console.log("you lose...");
         msg.innerText="YOU LOSE";
+        compScore++;
+        compMsg.innerText=compScore;
     }
 }
 const draw = () =>{
@@ -54,4 +59,5 @@ choices.forEach((choice) =>{
         playGame(userChoice)
     });
 });
+
 
